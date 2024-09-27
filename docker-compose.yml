@@ -1,22 +1,22 @@
 services:
   db:
     image: postgres:13-alpine3.20
-    port:
-      - 5432:5432
-    enviroment:
+    ports:                  # 'port' 대신 'ports'
+      - "5432:5432"          # 포트 매핑
+    environment:            # 'enviroment' 대신 'environment'
       - POSTGRES_USER=dockeruser
       - POSTGRES_PASSWORD=abc123!
       - POSTGRES_DB=pets
     volumes:
-      - pg-data:/vat/lib/postgresql/data
+      - pg-data:/var/lib/postgresql/data  # 'vat'가 아닌 'var'
       - ./db:/docker-entrypoint-initdb.d
 
   web:
     image: sun12wook11/nodejs-app
     build: web
-    port:
-      - 3000:3000
-    enviroment:
+    ports:                  # 'port' 대신 'ports'
+      - "3000:3000"          # 포트 매핑
+    environment:            # 'enviroment' 대신 'environment'
       - DB_HOST=db
     depends_on:
       - db
