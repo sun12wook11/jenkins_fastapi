@@ -23,5 +23,6 @@ INSERT INTO images (description, url) VALUES('giraffe', 'images/giraffe.png');
 INSERT INTO images (description, url) VALUES('hippos', 'images/hippos.png');
 INSERT INTO images (description, url) VALUES('male lion', 'images/male-lion.png');
 INSERT INTO images (description, url) VALUES('zebra', 'images/zebra.png');
+INSERT INTO images (description, url) VALUES('meerkat', 'images/meerkat.jpg');
 ALTER ROLE dockeruser CONNECTION LIMIT -1;
 
