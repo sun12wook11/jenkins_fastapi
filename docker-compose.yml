@@ -14,7 +14,7 @@ services:
   web:
     image: sun12wook11/nodejs-app
     build: web
-    ports:
+    port:
       - 3000:3000
     enviroment:
       - DB_HOST=db
