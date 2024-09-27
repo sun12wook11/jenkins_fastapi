@@ -41,7 +41,7 @@ app.get('/images', async (req, res) => {
 });
 
 app.get('/animal', async (req, res) => {
-    const imageId = getRandomInt(13) + 1;
+    const imageId = getRandomInt(12) + 1;
     const result = await pool.query(
         'select * from images where imageid=$1', [imageId]);
     const url = result.rows[0].url;
